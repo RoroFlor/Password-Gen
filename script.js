@@ -1,38 +1,42 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
-  let lChar= 'abcdefghijklmnopqrstuvwxyz'
-  let uChar= lChar.toUpperCase()
-  let nChar= '1234567890'
-  let sChar= '!@#$%^&*()'
-  let possibleChar;
-  let passLength = prompt('How long would you like your password?(Must be 8-128 char)')
-  if(passLength < 8 || passLength > 128) {
-    alert('Must be between 8-128 characters')
-    generatePassword()  
-  }
-  
-  let lowercase = confirm('Would you like lowercases?')
-  if(lowercase) {
-    possibleChar += lChar
-    // possibleChar = possibleChar + lChar
-  }
-  let uppercase = confirm('Would you like uppercases?')
-  if(uppercase) {
-    possibleChar += uChar
-  }
-  let numeric = confirm('Would you like numerics?')
-  if(numeric) {
-    possibleChar += nChar
-  }
-  let special = confirm('Would you like special characters?')
-  if(special){
-    possibleChar += sChar
-  }
+let lChar= ['a', 'b', 'c', 'd', 'e', 'f'];
+let uChar= ['A', 'B', 'C', 'D', 'E', 'F'];
+let nChar= ['1', '2', '3', '4', '5'];
+let sChar= ['!', '@', '#', '$'];
+let possibleChar = [];
+let finalPass = [];
 
-  var result = possibleChar
-  return result
+function generatePassword() {
+  let passLength = prompt('How long would you like your password?(Must be 8-128 char)');
+
+  let lowercase = confirm('Would you like lowercases?');
+  if(lowercase) {
+    possibleChar = possibleChar.concat(lChar);
+    
+  };
+
+  let uppercase = confirm('Would you like uppercases?');
+  if(uppercase) {
+    possibleChar = possibleChar.concat(uChar);
+  };
+
+  let numeric = confirm('Would you like numerics?');
+  if(numeric) {
+    possibleChar = possibleChar.concat(nChar);
+  };
+
+  let special = confirm('Would you like special characters?');
+  if(special){
+    possibleChar = possibleChar.concat(sChar);
+  };
+console.log(possibleChar)
+  for (let index = 0; index < passLength; index++) {
+    finalPass.push(possibleChar[Math.floor(Math.random()*possibleChar.length)])
+    console.log(finalPass);
+  }
+  return finalPass.join('')
 }
 
 // Write password to the #password input
@@ -46,7 +50,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-console.log(generateBtn)
+console.log(generateBtn);
 
 
 
