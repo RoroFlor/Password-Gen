@@ -1,13 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+// array of options user can choose from
 let lChar = ['a', 'b', 'c', 'd', 'e', 'f'];
 let uChar = ['A', 'B', 'C', 'D', 'E', 'F'];
 let nChar = ['1', '2', '3', '4', '5'];
 let sChar = ['!', '@', '#', '$'];
-
+// function generates password
 function generatePassword() {
-
+// empty variables to store user choices and send to a final password to display on site
   let possibleChar = [];
   let finalPass = [];
   let ifAllfalse=[lChar, uChar, nChar, sChar]
