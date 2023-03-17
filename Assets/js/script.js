@@ -5,8 +5,6 @@ let lChar = ['a', 'b', 'c', 'd', 'e', 'f'];
 let uChar = ['A', 'B', 'C', 'D', 'E', 'F'];
 let nChar = ['1', '2', '3', '4', '5'];
 let sChar = ['!', '@', '#', '$'];
-// let possibleChar = [];
-// let finalPass = [];
 
 function generatePassword() {
 
